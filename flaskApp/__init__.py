@@ -7,7 +7,7 @@ from flask_mail import Mail
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.environ.get('SERCRET_KEY') #use os.environ.get in production
+app.config['SECRET_KEY'] = str(os.environ.get('SERCRET_KEY')) #use os.environ.get in production
                            
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 db = SQLAlchemy(app)
