@@ -2,14 +2,7 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v3.8.5">
-
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/starter-template/">
+  
 
     <!-- Bootstrap core CSS -->
     <link href="https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -25,30 +18,31 @@
     <div class="sidebar">
 
         {% if page_id == 0 %}
-        <b> <a  href="{{url_for('home')}}">INTRODUCTION TO TAISEI</a> </b>
+        <b> <a  href="{{url_for('home')}}"><font color=#004d00>  INTRODUCTION TO TAISEI </font></a> </b>
         {% else %}
-        <a href="{{url_for('home')}}">INTRODUCTION TO TAISEI</a>
+    <a class="text-muted" href="{{url_for('home')}}">INTRODUCTION TO TAISEI</a>
         {% endif %}
 
         {% if page_id == 1 %}
-        <b> <a href="{{ url_for('projects')}}">PROJECTS</a> </b>
+        <b> <a href="{{ url_for('projects')}}"> <font color=#6666ff> PROJECTS </font> </a> </b>
         {% else %}
-        <a href="{{ url_for('projects')}}">PROJECTS</a>
+        <a class="text-muted" href="{{ url_for('projects')}}">PROJECTS</a>
         {% endif %}
         
         
 
         {% if page_id == 2 %}
-        <a class="active" href="{{ url_for('cv')}}">CV</a>
+        <b> <a  href="{{ url_for('cv')}}"><font color=#009900>  CV</font></a> </b>
         {% else %}
-        <a href="{{ url_for('cv')}}">CV</a>
+        <a class="text-muted" href="{{ url_for('cv')}}">CV</a>
         {% endif %}
 
         {% if page_id == 3 %}
-        <a class="active" href="{{ url_for('contact')}}">Contact</a>
+        <b>  <a  href="{{ url_for('contact')}}"><font color=#0066ff> CONTACT</font></a> </b>
         {% else %}
-        <a href="{{ url_for('contact')}}">Contact</a>
+        <a class="text-muted" href="{{ url_for('contact')}}">CONTACT</a>
         {% endif %}
+
     </div>
 
     <div class="content">
@@ -73,6 +67,7 @@
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/popper.min.js"></script>
     <script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
+  
 </body>
 
 </body>

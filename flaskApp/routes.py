@@ -57,7 +57,8 @@ def new_project():
     form = PostForm()
     if form.validate_on_submit():
         post = Post(title=form.title.data, language=form.language.data,
-            category=form.category.data, description=form.description.data, author=current_user)
+            category=form.category.data, description=form.description.data,
+             author=current_user,link=form.link.data)
         db.session.add(post)
         db.session.commit()
         flash('new project has been successfully added!', 'success')
@@ -83,6 +84,7 @@ def update_project(post_id):
         post.description = form.description.data
         post.language = form.language.data
         post.category = form.category.data
+        post.link = form.category.data
         db.session.commit()
         flash('post has been updated', 'success')
         return redirect(url_for('a_project', project_id=post.id))
@@ -91,6 +93,7 @@ def update_project(post_id):
         form.description.data = post.description
         form.language.data = post.language
         form.category.data = post.category
+        form.link.data = post.link
     return render_template('add_project.html', title='Update Post', form=form, legend='update post')
 
 

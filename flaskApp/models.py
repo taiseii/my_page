@@ -36,6 +36,7 @@ class Post(db.Model):
     description = db.Column(db.Text, nullable=False)
     language = db.Column(db.Text, nullable=False)
     category = db.Column(db.Text, nullable=False)
+    link = db.Column(db.String, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
     def __repr__(self):

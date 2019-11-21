@@ -64,7 +64,7 @@ def query_category():
     return lang_dict
 
 
-print(query_category())
+# print(query_category())
 
 
 

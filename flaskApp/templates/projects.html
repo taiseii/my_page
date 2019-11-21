@@ -20,15 +20,25 @@
 </div>
 {% endif %}
 
+
+
 {% for post in posts %}
-<div class="media-body">
-        <div class="article-metadata">
-          <small class="text-muted">Language:</small>  <a class="mr-2" href="#">{{ post.language }}</a><br>
-         <small class="text-muted">Categroy:</small>  <small class="text-muted">{{ post.category }}</small>
+<div class="wrapper">
+<div class="media-body", style="padding-bottom:25px">
+        <div class="article-metadata", style="padding-top:10px ">
+         <b> <small class="text-muted">Language:</small></b>  <small class="text-muted">{{ post.language }}</small><br>
+         <b> <small class="text-muted">Categroy:</small></b>  <small class="text-muted">{{ post.category }}</small>
         </div>
         <h2><a class="article-title" href="{{ url_for('a_project', project_id=post.id) }}">{{ post.title }}</a></h2>
         <p class="article-content">{{ post.description}}</p>
+
+        {% set links = post.link.split(', ') %}
+        {% for link in links %}
+          <a class="mr-2" href="{{ link }}">{{ link }}</a><br>
+        {% endfor %}
+
       </div>
+    </div>
     </article>  
 {% endfor %}
 

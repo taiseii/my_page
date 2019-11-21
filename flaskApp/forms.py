@@ -14,6 +14,7 @@ class PostForm(FlaskForm):
     language = StringField('Language', validators=[DataRequired()])
     category = StringField('Category', validators=[DataRequired()])
     description = TextAreaField('Description', validators=[DataRequired()])
+    link = TextAreaField('Link', validators=[DataRequired()])
     submit = SubmitField('Add')
 
 class RequestResetForm(FlaskForm):

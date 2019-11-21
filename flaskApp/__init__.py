@@ -4,13 +4,19 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 from flask_mail import Mail
-
+# from flaskApp.models import User, Post
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = str(os.environ.get('SERCRET_KEY')) #use os.environ.get in production
                            
 app.config['SQLALCHEMY_DATABASE_URI'] = str(os.environ.get('SQLALCHEMY_DATABASE_URI'))
 db = SQLAlchemy(app)
+
+# @app.shell_context_processor
+# def make_shell_context():
+#     return dict(db=db, User=User, Post=Post)
+
+
 bcrypt = Bcrypt(app) # this is for hasing the password when we create the registration form!
 login_manager = LoginManager(app)
 
