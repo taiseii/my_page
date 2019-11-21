@@ -12,7 +12,8 @@ from flask_mail import Message
 @app.route('/')
 @app.route('/home')
 def home():
-    return render_template('home.html', page_id=0)
+    cat_meme = url_for('static', filename='meme/'+ 'give_me_jobpls.png')
+    return render_template('home.html', page_id=0, cat_meme=cat_meme)
 
 
 @app.route('/projects')

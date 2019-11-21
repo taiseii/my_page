@@ -11,6 +11,8 @@ import pandas as pd
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css',
                         'https://codepen.io/amyoshino/pen/jzXypZ.css']
 
+
+
 dash_server = dash.Dash(
     __name__,
     server=app,
@@ -33,12 +35,6 @@ def query_lang():
     for item in lang_list:
         lang_dict[item] = lang_dict.get(item, 0) + 1
 
-    # for item in lang_dict:
-    #     lang_dict[item] = str(lang_dict[item])
-
-    # print(lang_dict.keys())
-    # print(lang_dict.values())
-
     return lang_dict
 
 def query_category():
@@ -55,16 +51,10 @@ def query_category():
     for item in lang_list:
         lang_dict[item] = lang_dict.get(item, 0) + 1
 
-    # for item in lang_dict:
-    #     lang_dict[item] = str(lang_dict[item])
-
-    print(lang_dict.keys())
-    print(lang_dict.values())
-
     return lang_dict
 
 
-# print(query_category())
+
 
 
 

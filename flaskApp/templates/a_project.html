@@ -1,13 +1,12 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<article class="media content-section">
+<article class="media content-section"style="padding-top:20px" >
     
 
     <div class="media-body">
         <div class="article-metadata">
-            <a class="mr-2" href="#">{{ post.author.username }}</a>
-            <small class="text-muted">dateeeee</small>
+            Author: <a class="mr-2" href="#">{{ post.author.username }}</a>
             {% if post.author == current_user %}
             <div>
                 <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('update_project', post_id = post.id) }}">Update</a>
@@ -15,9 +14,16 @@
                     data-target="#deleteModal">Delete</button>
             </div>
             {% endif %}
+         <br><b> <small class="text-muted">Language:</small></b>  <small class="text-muted">{{ post.language }}</small><br>
+         <b> <small class="text-muted">Categroy:</small></b>  <small class="text-muted">{{ post.category }}</small>
+        
         </div>
         <h2 class="article-title">{{ post.title }}</h2>
         <p class="article-content">{{ post.description }}</p>
+        {% set links = post.link.split(', ') %}
+        {% for link in links %}
+          <a class="mr-2" href="{{ link }}">{{ link }}</a><br>
+        {% endfor %}
     </div>
 </article>
 <!-- Modal -->
