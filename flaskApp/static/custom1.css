@@ -81,6 +81,9 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.media-body p {
+  max-width: 50rem;
+}
 
 /* Home Container */
 .home {
@@ -97,7 +100,8 @@
     padding-top: 64px;
 }
 .home .cat img {
-    height: 100%;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 /* Contact */
