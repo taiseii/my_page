@@ -6,6 +6,8 @@ import chart_studio.plotly as ply
 import plotly.graph_objects as ply_go
 from flaskApp.models import User, Post
 import pandas as pd
+import operator
+import collections
 
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css',
@@ -51,6 +53,8 @@ def query_category():
     for item in lang_list:
         lang_dict[item] = lang_dict.get(item, 0) + 1
 
+    lang_list = sorted(lang_dict.items(), key=operator.itemgetter(1))
+    lang_dict = collections.OrderedDict(lang_list)
     return lang_dict
 
 
@@ -89,25 +93,7 @@ dash_server.layout = html.Div(
 
    
 
-                            #   figure=ply_go.Figure(
-                            #       data=[ply_go.Treemap(
-                                      
-                            #              labels = ["Eve","Cain", "Seth", "Enos", "Noam", "Abel", "Awan", "Enoch", "Azura"],
-                            #              parents = ["", "Eve", "Eve", "Seth", "Seth", "Eve", "Eve", "Awan", "Eve"]
-                            #       )]
 
-                            #   )
-
-                    #         figure={
-                    #     'data': [
-                    #         {'x': list(query_category()), 'y': list(query_category().values()),
-                    #          'type': 'bar', 'name': 'SF', 'orientation':'h'},
-                    #         # {'x': [1, 2, 3], 'y': [2, 9, 8], 'type': 'bar', 'name': u'Montréal'},
-                    #     ],
-                    #     'layout': {
-                    #         'title': 'Graph 2'
-                    #     }
-                    # }
 
 
                               )
