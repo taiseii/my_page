@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     width: 200px;
-    background-color: #f0f3f3;
+    background-color: #ebe4e4;
     position: fixed;
     height: 100%;
     overflow: auto;
@@ -32,8 +32,8 @@
   /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
   div.content {
     margin-left: 200px;
-    padding: 1px 16px;
-    height: 1000px;
+    padding: 32px;
+    height: 100vh;
   }
   
   /* On screens that are less than 700px wide, make the sidebar into a topbar */
@@ -82,4 +82,33 @@
   transform: translate(-50%, -50%);
 }
 
+/* Home Container */
+.home {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align:center;
+}
+.home p {
+  font-size: 21px;
+}
+.home .cat {
+    flex-grow: 1;
+    padding-top: 64px;
+}
+.home .cat img {
+    height: 100%;
+}
 
+/* Contact */
+.contact {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.contact a {
+  margin: 32px 0;
+}

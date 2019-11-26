@@ -91,12 +91,7 @@ dash_server.layout = html.Div(
                                          title='Project Types')
                                  )
 
-   
-
-
-
-
-                              )
+    )
                 ], className='six columns'
                 )
             ], className="row"

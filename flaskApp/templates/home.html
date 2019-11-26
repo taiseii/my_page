@@ -1,20 +1,24 @@
-
 {% extends "layout.html" %}
 {% block content %}
-<div style="text-align:center ; padding-top: 50px">
+<div class="home">
+    <h1><b>Hello!</b> &#129321; i'm Taiseii</h1>
+    <p>
+        This is a web page designed to introduce myself to others(Future
+        bosses),
+        and it's written using Flask! 
+    </p>
+    <p>
+        <b>Because</b> of my interest in programming, big data, statistics, and technologies
+        that bind these three elements together,
+        I have studied Data Science at TU Eindhoven. Freshly graduated this November in BSc.
+    </p>
+
+    <h2><b>Currently,</b></h2>
+    <p>I am looking for an opportunity where I can grow as a human being and a coder &#128591;&#127996;.</p>
     
- <h2><b> Hello!</b> &#129321;</h2> <h4 style="padding-top:10px" ><br> I'm Taisei, and this is a web page designed to introduce myself to others(Future bosses), 
-    and it's written using Flask!<br> </h4>
-       <h4 style="padding-top:20px"> <b>Because</b> of my interest in programming, big data, statistics, and technologies that bind these three elements together, 
-           I have studied Data Science at TU Eindhoven. <br> Freshly graduated this November in BSc.</h4>
-       <b> 
+    <div class="cat">
+        <img src={{cat_meme}}>
     </div>
-
-<div style="text-align:center; padding-top: 20px">
-    <h3><b>Currently,</b></h3></b> <h4>I am looking for an opportunity where I can grow as a human being and a coder &#128591;&#127996;. </h4>
 </div>
 
-<div style="text-align: center; padding-top: 40px">
-    <img width='40%' src={{cat_meme}}>
-</div>
 {% endblock content %}
