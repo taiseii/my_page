@@ -85,7 +85,7 @@ def update_project(post_id):
         post.description = form.description.data
         post.language = form.language.data
         post.category = form.category.data
-        post.link = form.category.data
+        post.link = form.link.data
         db.session.commit()
         flash('post has been updated', 'success')
         return redirect(url_for('a_project', project_id=post.id))
