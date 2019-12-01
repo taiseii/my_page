@@ -71,10 +71,13 @@ dash_server.layout = html.Div(
                 html.Div([
                     dcc.Graph(id='language_usage',
                               figure=ply_go.Figure(
-                                  data=[ply_go.Pie(labels=list(query_lang().keys()),
-                                                   values=list(query_lang().values()))],
+                                  data=[ply_go.Pie( textinfo='label', textposition='inside',showlegend=False,labels=list(query_lang().keys()),
+                                                   values=list(query_lang().values()
+                                                   ))],
                                   layout=ply_go.Layout(
-                                      title='Language Usage')
+                                      title='Language Usage',
+                                      )
+
                               ))
                 ], className='six columns'
                 ),

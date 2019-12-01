@@ -2,7 +2,7 @@
 .sidebar {
     margin: 0;
     padding: 0;
-    width: 200px;
+    width: 175px;
     background-color: #ebe4e4;
     position: fixed;
     height: 100%;
@@ -19,20 +19,20 @@
   
   /* Active/current link */
   .sidebar a.active {
-    background-color: rgb(64, 106, 231);
+    background-color: rgb(150, 226, 223);
     color: white;
   }
   
   /* Links on mouse-over */
   .sidebar a:hover:not(.active) {
-    background-color: rgb(99, 90, 90);
+    background-color: rgb(167, 202, 209);
     color: white;
   }
   
   /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
   div.content {
     margin-left: 200px;
-    padding: 32px;
+    padding: 32px 8px;
     height: 100vh;
   }
   
@@ -97,7 +97,7 @@
 }
 .home .cat {
     flex-grow: 1;
-    padding-top: 64px;
+    padding-top: 32px;
 }
 .home .cat img {
   width: 100%;
@@ -116,3 +116,6 @@
 .contact a {
   margin: 32px 0;
 }
+
+
+
