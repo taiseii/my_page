@@ -7,8 +7,11 @@ stemmer = LancasterStemmer()
 import numpy as np
 import random
 import json
+import os
 
-with open("flaskApp\weightsNdata\intents.json") as file:
+taisei_data = os.path.join("flaskApp", "weightsNdata", "intents.json")
+
+with open(taisei_data) as file:
     data = json.load(file)
 
 words = []
@@ -84,7 +87,8 @@ class NeuralNet(Model):
 neural_net = NeuralNet()
 
 # Load trained weight
-neural_net.load_weights(filepath="flaskApp\weightsNdata\chat_bot_prototype.ckpt")
+weightsANDbias = os.path.join("flaskApp", "weightsNdata", "chat_bot_prototype.ckpt")
+neural_net.load_weights(filepath=weightsANDbias)
 
 class ChatBot:
     
