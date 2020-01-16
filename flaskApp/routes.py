@@ -176,8 +176,10 @@ def chat_bot():
     print(reply)
     messages.append(form.inbound.data)
     
-
-    print(messages)
+    if len(messages)>5:
+        messages.pop(0)
+        replies.pop(0)
+    
    
     return render_template('chat_bot.html', user_img=user_img, robot_img=robot_img, form=form, 
     messages=messages[::-1],replies=replies[::-1] )
