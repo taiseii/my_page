@@ -171,9 +171,9 @@ def chat_bot():
 
     
 
-    print(form.inbound.data)
+    # print(form.inbound.data)
     reply = "echo "+str(form.inbound.data)
-    print(reply)
+    # print(reply)
     messages.append(form.inbound.data)
     
     if len(messages)>5:
