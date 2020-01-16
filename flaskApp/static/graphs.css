@@ -1,0 +1,12 @@
+.graph-container{
+  display:flex;
+  flex-direction: row;
+  overflow-y: auto;
+  height: 60%;
+  flex-wrap: wrap;
+}
+
+.graph-item{
+  flex-grow: 1;
+  flex-basis: 100px;
+}

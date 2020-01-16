@@ -9,6 +9,7 @@ import pandas as pd
 import operator
 import collections
 
+
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css',
                         'https://codepen.io/amyoshino/pen/jzXypZ.css']
 
@@ -17,7 +18,7 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css',
 dash_server = dash.Dash(
     __name__,
     server=app,
-    routes_pathname_prefix='/dash/',
+    routes_pathname_prefix='/dash_pie/',
     external_stylesheets=external_stylesheets
 )
 
@@ -75,25 +76,9 @@ dash_server.layout = html.Div([
                                       )
 
                               ))
-                ], className='six columns'),
-
-                html.Div([
-                    dcc.Graph(id='project types',
-
-
-                                 figure=ply_go.Figure(
-                                     data=[ply_go.Bar(x=list(query_category().values()),
-                                        y=list(query_category().keys()),
-                                                                orientation='h' )],
-                                     layout=ply_go.Layout(
-                                         title='Project Types')
-                                 )
-
-    )
-                ], className='six columns'),
-            ], className="row"
+                ], ),], 
         )
-    ], className='ten columns offset-by-one')
+    ], )
 ])
 
 

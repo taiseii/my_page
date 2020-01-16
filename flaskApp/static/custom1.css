@@ -117,5 +117,155 @@
   margin: 32px 0;
 }
 
+.btn-group {
+  text-align: center;
+  padding-left: 23%;
+}
 
+.btn{
+  max-width: 30%;
+}
+
+/*chat module here  */
+
+/* Chat containers below here is chat_bot css yo*/
+.container_message{
+  max-width: 500 !important;
+  margin: auto;
+  margin-top: 0%;
+  font-family: sans-serif;
+  letter-spacing: 0.5px;
+
+}
+
+.avator{
+  max-width: 100%;
+  border-radius: 50%;
+  background-color: #ffff;
+}
+
+.msg-header{
+  border: 1px solid #ccc;
+  width: 100%;
+  height: 10%;
+  border-bottom: none;
+  display: inline-block;
+  background-color:#28a745;
+}
+
+.msg-header-img{
+  border-radius: 50%;
+  width: 40px;
+  margin-left: 5%;
+  margin-top: 12px;
+  float: left;
+}
+
+.active{
+  width:120px;
+  float: left;
+  margin-top: 10px;
+}
+
+
+
+.active h4{
+  padding-top: 10px;
+  font-size: 20px;
+  margin-left: 10px;
+  color:#fff;
+}
+
+.chat-page{
+  padding: 0 0 0 0;
+}
+
+.msg-inbox{
+  border: 1px solid #ccc;
+  overflow: hidden;
+  padding-bottom: 30px;
+  background-color: rgb(255, 255, 255);
+
+}
+
+.chats{
+  padding: 30px 15px 0 25px;
+}
+
+.msg-page{
+  height: 516px;
+  overflow-y: auto;
+}
+
+.received-chats{
+  padding-top: 5px;
+}
+
+.received-chats-img{
+  display: inline-block;
+  max-width: 20px;
+  text-align: left;
+  }
+
+.received-msg{
+  display: inline-block;
+  padding: 0 0 0 10px;
+  vertical-align: top;
+  width: 92%;
+}
+
+.received-msg-inbox{
+  width: 57%;
+}
+
+.received-msg-inbox p{
+  background: #28a745 none repeat scroll 0 0 ;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 14px;
+  margin: 0;
+  padding: 5px 10px 5PX 12PX;
+  width: 100%;
+}
+
+.outgoing-chats{
+  overflow: hidden;
+  margin: 26px 20px;
+}
+
+.outgoing-chats-msg p{
+  background: #0095ff none repeat scroll 0 0;
+  color: #fff;
+  border-radius: 10px;
+  font-size: 14px;
+  color:#fff;
+  padding:5px 10px 5px 10px;
+  width: 100%;
+}
+
+.outgoing-chats-msg{
+  float: left;
+  width: 46%;
+  margin-left: 45%;
+}
+
+.outgoing-chats-img{
+  /* position: absolute; */
+  display: inline-block;
+  width: 20px;
+  right: 40px;
+  text-align: right;
+}
+
+.form-control-input{
+  width: 100%;
+}
+
+.inbound{
+  width: 50%;
+}
+
+.form-control-input{
+  float: left;
+}
 

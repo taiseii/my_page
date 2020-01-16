@@ -26,4 +26,7 @@ app.config['MAIL_PASSWORD'] = os.environ.get('EMAIL_PASS')
 mail = Mail(app)
 
 from flaskApp import routes
-from flaskApp import dash_board
+
+from flaskApp import dash_board_pie
+from flaskApp import dash_board_bar
+# from flaskApp import dash_board

@@ -1,0 +1,22 @@
+/* Chat containers */
+.container_message{
+    max-width: 500 !important;
+    margin: auto;
+    margin-top: 4%;
+    font-family: sans-serif;
+    letter-spacing: 0.5px;
+
+  }
+  
+.avator{
+    max-width: 100%;
+}
+
+.msg-header{
+    border: 1px solid #ccc;
+    width: 100%;
+    height: 10%;
+    border-bottom: none;
+    display: inline-block;
+    background-color: #007bff;
+}

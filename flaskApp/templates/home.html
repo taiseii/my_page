@@ -14,11 +14,18 @@
     </p>
 
     <h2><b>Currently,</b></h2>
-    <p>I am looking for an opportunity where I can evolve as a human being and a coder &#128591;&#127996;</p>
-    <a class="mr-2" href="{{ url_for('learn_more') }}">"Learn more about me!"</a><br>
+    <p>I am looking for an opportunity where I can evolve as a human being and a developer &#128591;&#127996;</p>
+    
+    <div class="btn-group" >
+        <a type="button" href="{{ url_for('learn_more') }}" class="btn btn-primary">Learn more!</a>
+        
+        <a type="button" href="{{url_for('chat_bot')}}" class="btn btn-success">Talk with bot</a>
+      </div>
     <div class="cat">
         <img src={{cat_meme}}>
     </div>
-</div>
+</div>      
+
+
 
 {% endblock content %}

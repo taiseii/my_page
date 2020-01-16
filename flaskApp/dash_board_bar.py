@@ -12,16 +12,6 @@ import collections
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css',
                         'https://codepen.io/amyoshino/pen/jzXypZ.css']
 
-
-
-dash_server = dash.Dash(
-    __name__,
-    server=app,
-    routes_pathname_prefix='/dash/',
-    external_stylesheets=external_stylesheets
-)
-
-
 def query_lang():
     posts = Post.query.all()
     lang_list = []
@@ -56,26 +46,16 @@ def query_category():
     lang_dict = collections.OrderedDict(lang_list)
     return lang_dict
 
-
-
-
-
+dash_server = dash.Dash(
+    __name__,
+    server=app,
+    routes_pathname_prefix='/dash_bar/',
+    external_stylesheets=external_stylesheets
+)
 
 dash_server.layout = html.Div([
     html.Div([
         html.Div([
-                html.Div([
-                    dcc.Graph(id='language_usage',
-                              figure=ply_go.Figure(
-                                  data=[ply_go.Pie( textinfo='label', textposition='inside',showlegend=False,labels=list(query_lang().keys()),
-                                                   values=list(query_lang().values()
-                                                   ))],
-                                  layout=ply_go.Layout(
-                                      title='Language Usage',
-                                      )
-
-                              ))
-                ], className='six columns'),
 
                 html.Div([
                     dcc.Graph(id='project types',
@@ -90,15 +70,11 @@ dash_server.layout = html.Div([
                                  )
 
     )
-                ], className='six columns'),
-            ], className="row"
+                ], ),
+            ], 
         )
-    ], className='ten columns offset-by-one')
+    ], )
 ])
-
-
-
-
 
 if __name__ == '__main__':
     dash_server.run_server(debug=True)

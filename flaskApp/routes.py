@@ -1,18 +1,21 @@
 import os
 from flask import render_template, url_for, flash, redirect, abort, request
 from flaskApp import app, db, bcrypt, mail
-from flaskApp.forms import loginForm, PostForm, RequestResetForm, ResetPasswordForm
+from flaskApp.forms import loginForm, PostForm, RequestResetForm, ResetPasswordForm, MessageForm
 from flaskApp.models import User, Post
 from flask_login import current_user, login_user, logout_user, login_required
 import dash
 import dash_html_components as html
 from flask_mail import Message
+from flaskApp.chat_bot_model import ChatBot
 
 
 @app.route('/')
 @app.route('/home')
 def home():
+    
     cat_meme = url_for('static', filename='meme/'+ 'give_me_s.png')
+    
     return render_template('home.html', page_id=0, cat_meme=cat_meme)
 
 
@@ -151,3 +154,30 @@ def reset_token(token):
 @app.route('/learn_more')
 def learn_more():
     return render_template('learn_more.html',page_id=0,)
+
+messages = []
+replies = []
+@app.route('/chat_bot',methods=['POST','GET'])
+def chat_bot():
+    robot_img = url_for('static', filename='meme/'+ 'robotics.png')
+    user_img = url_for('static', filename='meme/'+ 'user.png')
+    form = MessageForm()
+    if form.validate_on_submit():
+        inbound = form.inbound.data
+
+    if str(form.inbound.data) != "None":
+        bot = ChatBot(str(form.inbound.data))
+        replies.append(bot.chat())
+
+    
+
+    print(form.inbound.data)
+    reply = "echo "+str(form.inbound.data)
+    print(reply)
+    messages.append(form.inbound.data)
+    
+
+    print(messages)
+   
+    return render_template('chat_bot.html', user_img=user_img, robot_img=robot_img, form=form, 
+    messages=messages[::-1],replies=replies[::-1] )

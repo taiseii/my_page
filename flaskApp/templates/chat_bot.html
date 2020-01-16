@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container_message">
+    <div class="msg-header">
+        <div class="msg-header-img">
+            <img class="avator" src="{{robot_img}}">
+            <p style="padding-top: 20px;">I am <br>
+                Neural Trained <br>
+                Taisei
+            </p>
+            
+        </div>
+        <div class="active">
+            <h4>Taiseii bot</h4>
+            <p style="padding-top: 20px;">a feed forward<br>
+                &nbsp; &nbsp; Network<br>
+                &nbsp; &nbsp;  on<br>
+                &nbsp; dataset
+            </p>
+            
+        </div>
+        <div class="chat-page">
+            <div class="msg-inbox">
+                <div class="chats">
+                    <div class="msg-page">
+
+                        <div class="received-chats">
+                        <div class="received-chats-img">
+                            <img class="avator" src="{{robot_img}}">
+                        </div>
+                            <div class="received-msg">
+                                <div class="received-msg-inbox">
+                                    <p>Hi, I'm a taiseii bot!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="received-chats">
+                            <div class="received-chats-img">
+                                <img class="avator" src="{{robot_img}}">
+                            </div>
+                                <div class="received-msg">
+                                    <div class="received-msg-inbox">
+                                        <p>AMA(Ask me anything) about taisei!</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        
+                        {% for reply in replies %}
+
+                        <div class="received-chats">
+                            <div class="received-chats-img">
+                                <img class="avator" src="{{robot_img}}">
+                            </div>
+                            <div class="received-msg">
+                                <div class="received-msg-inbox">
+                                    <p>{{reply}}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="outgoing-chats">
+                            <div class="outgoing-chats-msg">
+                                <p>{{ messages[loop.index0] }}</p>
+                            </div>
+                            <div class="outgoing-chats-img">
+                                <img class="avator" src="{{user_img}}">
+                            </div>
+                        </div>
+                        {% endfor %}
+                        
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<form method="POST" , action="">
+<div class="form-group" > 
+    {% if form.inbound.errors %}
+    {{ form.inbound(class="inbound form-control-sm is-invalid") }}}}
+    <div class="invalid-feedback">
+        {% for error in form.inbound.errors %}
+        <span>{{error}}</span>
+        {% endfor %}
+    </div>
+    {% else %}
+    {{ form.inbound(class="inbound form-control form-control-sm", placeholder="How old are you?") }}
+    {% endif %}
+    
+</div>
+<div class="form-group">
+    {{ form.submit(class="btn btn-primary") }}
+</div>
+</form>
+
+  
+{% endblock content %}
